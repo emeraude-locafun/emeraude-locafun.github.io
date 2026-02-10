@@ -35,9 +35,11 @@ const sortedFleet = fleet.sort((a, b) => a.data.type.localeCompare(b.data.type))
 	</Hero>
   <!-- FLOTTE SECTION -->
   <section id="fleet" class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4">
+    <div class="max-w-7xl mx-auto px-4 text-center">
       <div class=" mb-16">
         <h2 class="text-4xl font-bold text-gray-900 mb-4">Notre Flotte</h2>
+<div class="flex justify-center"> <!-- Centre le bloc enfant -->
+  <div class="w-fit text-left">   <!-- Le bloc s'adapte au contenu -->
         <p class="text-xl text-gray-600">Côté matos ?</p>
 <p class="text-xl text-gray-600">👉 Du dernier cri pour les curieux,</p>
         <p class="text-xl text-gray-600">
@@ -45,6 +47,9 @@ const sortedFleet = fleet.sort((a, b) => a.data.type.localeCompare(b.data.type))
         <p class="text-xl text-gray-600">
 👉 Et surtout de quoi trouver l’engin qui vous fera décoller !
 </p>
+  </div>
+</div>
+
 
       </div>
 
