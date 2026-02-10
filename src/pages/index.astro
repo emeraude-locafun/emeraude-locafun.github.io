@@ -1,17 +1,126 @@
 ---
+import "../styles/global.css";
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.vue';
+import Pricing from '../components/Pricing.vue';
+import FleetCard from '../components/FleetCard.astro';
+import { getCollection } from 'astro:content';
 
+import Hero from '../components/Hero.vue';
+import { getEntry } from 'astro:content';
+
+// 1. Récupérer les données du fichier hero.md
+const heroEntry = await getEntry('sections', 'hero');
+const { Content: HeroContent } = await heroEntry.render();
+
+// Récupération des données MDX
+const fleet = await getCollection('fleet');
+// Tri des bateaux : Catamarans d'abord, puis Kayaks/Paddle
+const sortedFleet = fleet.sort((a, b) => a.data.type.localeCompare(b.data.type));
+
+const heroContent = {
+  title: "Location engins nautiques Lancieux",
+  subtitle: "La baie de Lancieux, notre terrain de jeu préféré !",
+  desc: "Bienvenue dans la baie (presque trop) parfaite de Lancieux ! Emma et Gaëtan vous accueillent pour la saison 2026."
+};
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Émeraude Loca-fun | Location Catamaran & Kayak à Lancieux">
+  <Header client:load />
+
+<Hero 
+    client:load
+    title={heroEntry.data.title}
+    subtitle={heroEntry.data.subtitle}
+    image={heroEntry.data.image}
+  >
+    <!-- On injecte le corps du texte (le body du markdown) dans le slot du composant -->
+    <HeroContent />
+	</Hero>
+  <!-- FLOTTE SECTION -->
+  <section id="fleet" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class=" mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-4">Notre Flotte</h2>
+        <p class="text-xl text-gray-600">Côté matos ?</p>
+<p class="text-xl text-gray-600">👉 Du dernier cri pour les curieux,</p>
+        <p class="text-xl text-gray-600">
+👉 Des grands classiques pour les puristes,</p>
+        <p class="text-xl text-gray-600">
+👉 Et surtout de quoi trouver l’engin qui vous fera décoller !
+</p>
+
+      </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+  { sortedFleet.map(boat => (
+    <FleetCard
+      title={boat.data.title}
+      type={boat.data.type}
+      capacity={boat.data.capacity}
+      description={boat.data.description}
+      image={boat.data.image}
+      slug={boat.slug} 
+    />
+  ))}
+</div>
+	        <div class="text-center mt-6 mb-16">
+        <p class="text-xl text-gray-600">
+  👉 En solo, à deux ou en tribu, larguez les amarres et partez explorer la baie de Lancieux à votre façon !
+</p>
+    </div>
+	</div>
+  </section>
+
+
+  <!-- TARIFS SECTION -->
+  <section id="pricing" class="py-20 bg-emerald-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-900">Tarifs & Réservation</h2>
+        <p class="mt-4 text-lg text-gray-600">Tout inclus : combinaison, gilet, harnais.</p>
+      </div>
+      <div class="max-w-4xl mx-auto">
+        <Pricing client:visible />
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO PRATIQUES / CONTACT -->
+  <section id="contact" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="text-3xl font-bold mb-6">Comment louer ?</h2>
+        <ol class="space-y-4 text-lg text-gray-700">
+          <li class="flex items-start">
+            <span class="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">1</span>
+            Appelez-nous pour réserver
+          </li>
+          <li class="flex items-start">
+            <span class="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">2</span>
+            Rendez-vous Plage de Saint-Sieu à Lancieux
+          </li>
+          <li class="flex items-start">
+            <span class="bg-emerald-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">3</span>
+            On s'occupe de la mise à l'eau et du matériel
+          </li>
+        </ol>
+        
+        <div class="mt-8 p-6 bg-gray-100 rounded-lg">
+          <h3 class="font-bold mb-2">📍 Adresse</h3>
+          <p>Plage de Saint-Sieu, Lancieux (35)</p>
+          <p class="text-sm text-gray-500 mt-2">Bateau de sécurité motorisé toujours à proximité.</p>
+        </div>
+      </div>
+      
+      <div class="flex flex-col justify-center items-center bg-emerald-900 text-white p-8 rounded-2xl text-center">
+        <h3 class="text-2xl font-bold mb-4">Réservez votre session</h3>
+        <p class="mb-8">Que vous veniez de Saint-Briac, Saint-Lunaire ou d'ailleurs.</p>
+        <a href="tel:+33600000000" class="text-3xl font-bold bg-white text-emerald-900 px-8 py-4 rounded-full hover:bg-emerald-100 transition shadow-lg">
+          📞 06 XX XX XX XX
+        </a>
+        <p class="mt-4 text-sm opacity-75">Ouvert tous les jours en saison</p>
+      </div>
+    </div>
+  </section>
+</Layout>

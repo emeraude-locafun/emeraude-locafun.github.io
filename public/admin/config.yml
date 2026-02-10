@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  # Collection pour les sections fixes (Hero, À propos)
+  - name: "sections"
+    label: "Sections de page"
+    folder: "src/content/sections"
+    create: false
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Contenu", name: "body", widget: "markdown"}
+      - {label: "Image de fond", name: "image", widget: "image", required: false}
+
+  # Collection pour la flotte (Catamarans, Kayaks, Paddle)
+  - name: "fleet"
+    label: "La Flotte"
+    folder: "src/content/fleet"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nom du modèle", name: "title", widget: "string"} # Ex: Hobie Cat 16
+      - {label: "Type", name: "type", widget: "select", options: ["Catamaran", "Kayak", "Paddle", "Dériveur"]}
+      - {label: "Capacité", name: "capacity", widget: "string"} # Ex: 2 à 3 personnes
+      - {label: "Description courte", name: "description", widget: "text"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Détails complets", name: "body", widget: "markdown"} # Le texte MDX complet

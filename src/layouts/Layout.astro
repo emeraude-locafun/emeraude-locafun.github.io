@@ -1,0 +1,82 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { 
+	title, 
+	description = "Location de catamarans, kayaks et paddles à Lancieux (35). Émeraude Loca-fun vous accueille plage de Saint-Sieu." 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Google Fonts : 'Montserrat' pour les titres (côté sportif/nautique) et 'Inter' pour la lecture -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
+		<!-- Script Netlify Identity : Indispensable pour que le login de l'admin fonctionne sur le site en ligne -->
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+		<title>{title}</title>
+	</head>
+	<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
+		
+		<!-- Le contenu de votre page (index.astro) sera injecté ici -->
+		<main class="flex-grow">
+			<slot />
+		</main>
+
+		<!-- Pied de page global -->
+		<footer class="bg-emerald-950 text-white py-8 border-t border-emerald-800">
+			<div class="max-w-7xl mx-auto px-4 text-center">
+				<p class="font-heading font-bold text-lg mb-2">Émeraude Loca-fun</p>
+				<p class="text-emerald-200 text-sm mb-4">Plage de Saint-Sieu, 22770 Lancieux</p>
+				<div class="text-xs text-gray-400">
+					&copy; {new Date().getFullYear()} Emma & Gaëtan. Tous droits réservés.
+				</div>
+			</div>
+		</footer>
+
+		<!-- Script de redirection automatique après login admin -->
+		<script>
+			declare global {
+				interface Window {
+					netlifyIdentity: any;
+				}
+			}
+			if (window.netlifyIdentity) {
+				window.netlifyIdentity.on("init", (user: any) => {
+					if (!user) {
+						window.netlifyIdentity.on("login", () => {
+							document.location.href = "/admin/";
+						});
+					}
+				});
+			}
+		</script>
+	</body>
+</html>
+
+<style is:global>
+	/* Définition globale des polices via Tailwind ou CSS standard */
+	:root {
+		--accent: 16, 185, 129; /* Couleur Emerald-500 */
+	}
+	html {
+		font-family: 'Inter', sans-serif;
+		background-color: #f9fafb;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Montserrat', sans-serif;
+	}
+</style>

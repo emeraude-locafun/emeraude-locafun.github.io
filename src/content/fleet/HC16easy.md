@@ -1,0 +1,25 @@
+---
+title: "😄 Hobbie Cat 16 Easy"
+type: "Catamaran"
+capacity: "Jusqu'à 3 personnes"
+description: "La version loisir du célèbre HC16. Stable, rassurant et idéal pour les familles ou les débutants."
+image: "/images/hobie-cat-16easy.jpg"
+---
+
+### Le catamaran 16 pieds accessible à tous
+Polyvalent, ludique et rassurant, le **Hobie Cat 16 Voile EASY** est le catamaran parfait pour naviguer en toute sérénité, que vous soyez débutant, en famille ou simplement en quête de plaisir sur l’eau.
+
+Facile à manœuvrer et très stable, il peut accueillir des enfants à bord en toute sécurité. C’est le compagnon idéal pour des **sorties en mer familiales**, entre détente et découverte.
+
+### Un équipement pensé pour la sécurité
+Contrairement à la version Race, ce modèle est équipé pour pardonner les erreurs :
+*   **Flotteur de mât :** le bateau ne chavire pas complètement en cas de dessalage (ça peut aussi faire partie de l’aventure 😉).
+*   **Foc non latté :** très pratique, il facilite les virements de bord ainsi que les départs et retours de plage.
+
+### Le programme idéal
+Ce catamaran est parfaitement adapté pour des sorties à deux ou trois personnes, en mode découverte de la baie de Lancieux. Partez explorer les îles emblématiques : **Agot, Perron, Ébihens**, avec pourquoi pas une petite pause pique-nique dans un décor de carte postale.
+
+> **À qui s'adresse-t-il ?**
+> *   Aux familles avec enfants
+> *   Aux navigateurs débutants ou occasionnels
+> *   Aux sorties tranquilles par petit temps

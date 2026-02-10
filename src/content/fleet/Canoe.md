@@ -1,0 +1,28 @@
+---
+title: "🛶 Kayaks de Mer"
+type: "Kayak"
+capacity: "1 à 3 personnes"
+description: "Explorez la côte à votre rythme. Disponibles en version Solo (sportif) ou Double (stable et familial)."
+image: "/images/kayak.jpg"
+---
+
+### Partez à l’aventure dans la baie de Lancieux
+En solo ou à deux, embarquez pour une balade inoubliable. Faciles à prendre en main et accessibles à tous, nos kayaks sont parfaits pour explorer la côte à votre rythme, sans bruit et au plus près de la nature.
+
+Nous proposons deux types de supports :
+
+#### 1. Kayaks Doubles (Sit-on-top)
+Parfaits pour **2 adultes** ou **1 adulte + 1 enfant**.
+Stables, confortables et bien carénés, ils permettent de pagayer en toute sécurité tout en profitant de la balade. C'est le choix idéal pour initier les enfants à la navigation ou partager un moment convivial.
+
+#### 2. Kayaks Simples
+Légers, profilés et performants. Ils sont idéaux pour les **randonnées sportives**, les amateurs de glisse et ceux qui veulent se concentrer sur la technique.
+
+### Des itinéraires sur mesure
+Selon votre forme, la météo et le jeu des marées, plusieurs itinéraires s’offrent à vous au départ de LA PLAGE :
+*   **Cap sur les îles :** Explorez les criques de Saint-Briac, l’île Agot ou la presqu’île des Ébihens.
+*   **Remontée du Frémur :** Une balade paisible dans l'estuaire, souvent abritée du vent.
+*   **Escapade plage :** Longez les nombreuses plages de la baie pour une pause baignade.
+
+> **Tout l’équipement fourni :**
+> Gilet de sauvetage, pagaie, dossier confort et **sac ou bidon étanche** pour protéger vos affaires (téléphone, pique-nique) durant l'expédition.
