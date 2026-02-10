@@ -13,16 +13,12 @@ import { getEntry } from 'astro:content';
 const heroEntry = await getEntry('sections', 'hero');
 const { Content: HeroContent } = await heroEntry.render();
 
+console.log(heroEntry);
 // Récupération des données MDX
 const fleet = await getCollection('fleet');
 // Tri des bateaux : Catamarans d'abord, puis Kayaks/Paddle
 const sortedFleet = fleet.sort((a, b) => a.data.type.localeCompare(b.data.type));
 
-const heroContent = {
-  title: "Location engins nautiques Lancieux",
-  subtitle: "La baie de Lancieux, notre terrain de jeu préféré !",
-  desc: "Bienvenue dans la baie (presque trop) parfaite de Lancieux ! Emma et Gaëtan vous accueillent pour la saison 2026."
-};
 ---
 
 <Layout title="Émeraude Loca-fun | Location Catamaran & Kayak à Lancieux">

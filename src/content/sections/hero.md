@@ -1,6 +1,8 @@
 ---
 title: "Location engins nautiques Lancieux"
+
 subtitle: "🌊 La baie de Lancieux, notre terrain de jeu préféré !"
+
 image: "/images/hero-bg.jpg"
 ---
 
