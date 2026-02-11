@@ -29,9 +29,22 @@ const pagesCollection = defineCollection({
   }),
 });
 
+const settingsCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    phoneDisplay: z.string(),
+    phoneNumber: z.string(),
+    enableWhatsapp: z.boolean().optional(),
+    whatsappNumber: z.string().optional(),
+    whatsappMessage: z.string().optional(),
+  }),
+});
+
 export const collections = {
   fleet: fleetCollection,
   sections: sectionsCollection,
-    pages: pagesCollection, // <-- Ajout de la nouvelle collection
+    pages: pagesCollection,
+    settings: settingsCollection, // <-- Ajout ici
+
 
 };

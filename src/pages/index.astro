@@ -5,7 +5,7 @@ import Header from '../components/Header.vue';
 import Pricing from '../components/Pricing.vue';
 import FleetCard from '../components/FleetCard.astro';
 import { getCollection } from 'astro:content';
-
+import  Contact from '../components/Contact.astro';
 import Hero from '../components/Hero.vue';
 import { getEntry } from 'astro:content';
 
@@ -136,8 +136,10 @@ const sortedFleet = fleet.sort((a, b) => a.data.type.localeCompare(b.data.type))
     </div>
   </section>
 
+    <Contact /> 
+
   <!-- INFO PRATIQUES / CONTACT -->
-  <section id="contact" class="py-20 bg-white">
+<!--  <section id="contact" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12">
       <div>
         <h2 class="text-3xl font-bold mb-6">Comment louer ?</h2>
@@ -172,5 +174,5 @@ const sortedFleet = fleet.sort((a, b) => a.data.type.localeCompare(b.data.type))
         <p class="mt-4 text-sm opacity-75">Ouvert tous les jours en saison</p>
       </div>
     </div>
-  </section>
+  </section> -->
 </Layout>

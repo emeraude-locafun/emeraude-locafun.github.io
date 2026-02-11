@@ -48,3 +48,18 @@ collections:
       - {label: "Sous-titre / Accroche", name: "subtitle", widget: "string"}
       - {label: "Image d'en-tête", name: "image", widget: "image"}
       - {label: "Contenu", name: "body", widget: "markdown"}
+# ... collections fleet, sections, pages existantes ...
+
+  # Nouvelle collection pour les paramètres globaux
+  - name: "settings"
+    label: "Paramètres du site"
+    files:
+      - name: "contact"
+        label: "Contact & Réseaux"
+        file: "src/content/settings/contact.md"
+        fields:
+          - {label: "Numéro affiché (ex: 06 12...)", name: "phoneDisplay", widget: "string"}
+          - {label: "Numéro à appeler (Format intl: +336...)", name: "phoneNumber", widget: "string"}
+          - {label: "Activer WhatsApp", name: "enableWhatsapp", widget: "boolean", default: true}
+          - {label: "Numéro WhatsApp (Format sans +: 336...)", name: "whatsappNumber", widget: "string", required: false}
+          - {label: "Message pré-rempli WhatsApp", name: "whatsappMessage", widget: "string", required: false}
