@@ -1,5 +1,14 @@
 # Astro Starter Kit: Minimal
 
+## TODO
+
+- [x] configure decapcms
+- [x] use mdx
+- [x] configure worker for authentification
+- [x] manaage sw cache
+
+
+
 ```sh
 npm create astro@latest -- --template minimal
 ```
