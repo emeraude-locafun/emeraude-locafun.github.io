@@ -63,3 +63,25 @@ collections:
           - {label: "Activer WhatsApp", name: "enableWhatsapp", widget: "boolean", default: true}
           - {label: "Numéro WhatsApp (Format sans +: 336...)", name: "whatsappNumber", widget: "string", required: false}
           - {label: "Message pré-rempli WhatsApp", name: "whatsappMessage", widget: "string", required: false}
+
+# ... (après le fichier contact) ...
+  - name: "pricing"
+    label: "Paramètres de prix"
+    files:
+      - name: "pricing"
+        label: "Grille des Tarifs"
+        file: "src/content/settings/pricing.md"
+        fields:
+          - {label: "Titre Happy Hour", name: "happyHourTitle", widget: "string"}
+          - {label: "Détails Happy Hour (Markdown)", name: "happyHourText", widget: "string"}          
+          - {label: "Petite phrase du bas (Subtext)", name: "happyHourSubtext", widget: "string", required: false, hint: "S'affiche en petit et en transparence"}
+          - label: "Lignes du tableau"
+            name: "pricing_table"
+            widget: "list"
+            fields:
+              - {label: "Nom du Support", name: "name", widget: "string"}
+              - {label: "Prix 1h (€)", name: "price_1h", widget: "number", required: false}
+              - {label: "Prix 2h (€)", name: "price_2h", widget: "number", required: false}
+              - {label: "Prix 3h (€)", name: "price_3h", widget: "number", required: false}
+              - {label: "Prix 4h (€)", name: "price_4h", widget: "number", required: false}
+              - {label: "Prix Journée (€)", name: "price_day", widget: "number", required: false}

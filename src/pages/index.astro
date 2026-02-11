@@ -12,7 +12,16 @@ import { getEntry } from 'astro:content';
 // 1. Récupérer les données du fichier hero.md
 const heroEntry = await getEntry('sections', 'hero');
 const { Content: HeroContent } = await heroEntry.render();
+import { marked } from 'marked'; // <--- Import de la librairie
 
+// Récupération des données Tarifs
+const pricingEntry = await getEntry('pricing', 'pricing');
+const pricingData = pricingEntry.data;
+const happyHourHtml = pricingData.happyHourText 
+  ? marked.parse(pricingData.happyHourText) 
+  : '';
+
+//  console.error(happyHourHtml)
 // Récupération des données MDX
 const fleet = await getCollection('fleet');
 // Tri des bateaux : Catamarans d'abord, puis Kayaks/Paddle
@@ -131,7 +140,15 @@ const sortedFleet = fleet.sort((a, b) => a.data.type.localeCompare(b.data.type))
         <p class="mt-4 text-lg text-gray-600">Tout inclus : combinaison, gilet, harnais.</p>
       </div>
       <div class="max-w-4xl mx-auto">
-        <Pricing client:visible />
+
+	   <Pricing 
+        client:visible 
+        items={pricingData.pricing_table}
+		happyHourTitle={pricingData.happyHourTitle}
+        happyHourHtml={happyHourHtml}  
+        happyHourSubtext={pricingData.happyHourSubtext} 
+      />
+
       </div>
     </div>
   </section>

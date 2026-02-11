@@ -37,14 +37,36 @@ const settingsCollection = defineCollection({
     enableWhatsapp: z.boolean().optional(),
     whatsappNumber: z.string().optional(),
     whatsappMessage: z.string().optional(),
+
   }),
 });
+
+const pricingCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    happyHourTitle: z.string().optional(),
+    happyHourText: z.string().optional(),
+    happyHourSubtext: z.string().optional(),
+    pricing_table: z.array(
+      z.object({
+        name: z.string(),
+        price_1h: z.number().nullable().optional(),
+        price_2h: z.number().nullable().optional(),
+        price_3h: z.number().nullable().optional(),
+        price_4h: z.number().nullable().optional(),
+        price_day: z.number().nullable().optional(),
+      })
+    ).optional(),
+  }),
+});
+
 
 export const collections = {
   fleet: fleetCollection,
   sections: sectionsCollection,
     pages: pagesCollection,
-    settings: settingsCollection, // <-- Ajout ici
+    settings: settingsCollection, 
+    pricing: pricingCollection
 
 
 };
