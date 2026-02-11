@@ -4,6 +4,7 @@ import "../../styles/global.css";
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.vue';
+import ResponsiveImage from '../../components/ResponsiveImage.vue';
 
 // 1. Génération des routes statiques pour chaque fichier MDX trouvé dans src/content/fleet/
 export async function getStaticPaths() {
@@ -62,7 +63,7 @@ const typeColor = entry.data.type === 'Catamaran' ? 'bg-blue-100 text-blue-800'
       <div class="lg:col-span-2">
         <div class="prose prose-lg prose-emerald max-w-none">
             <!-- C'est ici que le contenu rédigé dans Decap CMS s'affiche -->
-            <Content />
+            <Content components={{ ResponsiveImage }} />
         </div>
         
         <div class="mt-12 pt-8 border-t border-gray-100">
