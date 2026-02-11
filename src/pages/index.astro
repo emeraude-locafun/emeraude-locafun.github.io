@@ -13,7 +13,6 @@ import { getEntry } from 'astro:content';
 const heroEntry = await getEntry('sections', 'hero');
 const { Content: HeroContent } = await heroEntry.render();
 
-console.log(heroEntry);
 // Récupération des données MDX
 const fleet = await getCollection('fleet');
 // Tri des bateaux : Catamarans d'abord, puis Kayaks/Paddle
@@ -73,6 +72,56 @@ const sortedFleet = fleet.sort((a, b) => a.data.type.localeCompare(b.data.type))
 	</div>
   </section>
 
+
+<!-- SECTION ACTIVITÉS SPÉCIFIQUES -->
+  <section  id="prestations" class="py-20 bg-white border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 font-heading">Envie de plus ?</h2>
+        <p class="mt-4 text-xl text-gray-600">Découvrez nos formules sur mesure pour progresser ou faire la fête.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+        
+        <!-- Carte Cours Particuliers -->
+        <a href="/cours-particuliers" class="group relative rounded-2xl overflow-hidden h-80 shadow-lg hover:shadow-2xl transition-all duration-300">
+          <div class="absolute inset-0">
+            <img src="/images/coursparticulier.jpg" alt="Cours de voile" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent"></div>
+          </div>
+          <div class="absolute bottom-0 left-0 p-8 w-full">
+            <h3 class="text-3xl font-bold text-white mb-2 font-heading">Cours Particuliers</h3>
+            <p class="text-gray-200 mb-4 line-clamp-2">Coaching personnalisé avec moniteur diplômé pour progresser rapidement.</p>
+            <span class="inline-flex items-center text-emerald-300 font-bold group-hover:text-white transition">
+              En savoir plus <span class="ml-2 transform group-hover:translate-x-1 transition">→</span>
+            </span>
+          </div>
+        </a>
+
+        <!-- Carte Groupes -->
+        <a href="/groupes" class="group relative rounded-2xl overflow-hidden h-80 shadow-lg hover:shadow-2xl transition-all duration-300">
+          <div class="absolute inset-0">
+            <img src="/images/ejf.webp" alt="Groupe EVJF" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent"></div>
+          </div>
+          <div class="absolute bottom-0 left-0 p-8 w-full">
+            <div class="flex justify-between items-end">
+              <div>
+                <h3 class="text-3xl font-bold text-white mb-2 font-heading">Groupes & EVJF</h3>
+                <p class="text-gray-200 mb-4 line-clamp-2">Anniversaires, séminaires ou enterrement de vie de célibataire.</p>
+              </div>
+              <!-- Petit badge fun -->
+              <span class="mb-8 text-3xl animate-bounce">🎉</span>
+            </div>
+            <span class="inline-flex items-center text-yellow-300 font-bold group-hover:text-white transition">
+              Voir les offres <span class="ml-2 transform group-hover:translate-x-1 transition">→</span>
+            </span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
 
   <!-- TARIFS SECTION -->
   <section id="pricing" class="py-20 bg-emerald-50">

@@ -5,7 +5,7 @@
         
         <!-- Logo / Titre -->
         <div class="flex-shrink-0 flex items-center">
-          <a href="#" class="text-2xl font-extrabold text-emerald-700 tracking-tight font-heading">
+          <a href="/#" class="text-2xl font-extrabold text-emerald-700 tracking-tight font-heading">
             ÉMERAUDE <span class="text-emerald-500 font-normal">LOCA-FUN</span>
           </a>
         </div>
@@ -57,6 +57,7 @@ const isScrolled = ref(false);
 const navItems = [
   { name: 'Accueil', href: '/#' },
   { name: 'La Flotte', href: '/#fleet' },
+  { name: 'Autres prestations', href: '/#prestations' },
   { name: 'Tarifs', href: '/#pricing' }
 ];
 

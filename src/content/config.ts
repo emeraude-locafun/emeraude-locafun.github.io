@@ -20,7 +20,18 @@ const sectionsCollection = defineCollection({
   }),
 });
 
+const pagesCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    subtitle: z.string().optional(),
+    image: z.string().optional(),
+  }),
+});
+
 export const collections = {
   fleet: fleetCollection,
   sections: sectionsCollection,
+    pages: pagesCollection, // <-- Ajout de la nouvelle collection
+
 };

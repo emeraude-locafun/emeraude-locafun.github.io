@@ -1,0 +1,44 @@
+---
+import "../styles/global.css";
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.vue';
+import { getEntry } from 'astro:content';
+
+// Récupération du contenu "cours-particuliers"
+const entry = await getEntry('pages', 'cours-particuliers');
+const { Content } = await entry.render();
+---
+
+<Layout title={`${entry.data.title} | Émeraude Loca-fun`}>
+  <Header client:load />
+
+  <main>
+    <!-- En-tête de page -->
+    <div class="relative h-[40vh] min-h-[300px] flex items-center justify-center bg-gray-900">
+      {entry.data.image && (
+        <img src={entry.data.image} alt={entry.data.title} class="absolute inset-0 w-full h-full object-cover opacity-60" />
+      )}
+      <div class="relative z-10 text-center px-4">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 font-heading">{entry.data.title}</h1>
+        <p class="text-xl text-emerald-200 font-medium">{entry.data.subtitle}</p>
+      </div>
+    </div>
+
+    <!-- Contenu -->
+    <section class="max-w-4xl mx-auto px-4 py-16">
+      <div class="prose prose-lg prose-emerald max-w-none bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
+        <Content />
+      </div>
+
+      <!-- Bloc Action -->
+      <div class="mt-12 text-center">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Prêt à progresser ?</h3>
+        <div class="flex justify-center gap-4">
+          <a href="/#contact" class="px-8 py-3 bg-emerald-600 text-white font-bold rounded-full hover:bg-emerald-700 transition shadow-lg">
+            Réserver un cours
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

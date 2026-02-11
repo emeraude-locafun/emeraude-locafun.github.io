@@ -1,0 +1,27 @@
+---
+title: "Groupes & Événements"
+subtitle: "EVJF, EVG, Anniversaires, Team Building... La baie est à vous !"
+image: "/images/ejf.webp"
+---
+
+### Partagez la mer avec vos proches
+
+Vous voulez marquer le coup pour un événement spécial ? **Émeraude Loca-fun** organise votre sortie sur mesure. Pas besoin d'être un expert de la voile, nos supports sont accessibles et funs !
+
+#### 🎉 Les occasions idéales :
+*   **Enterrement de vie de jeune fille / garçon (EVJF/EVG)** : Challenges, rigolade et baignade.
+*   **Sorties entre amis** : Louez une flottille de kayaks ou de paddles pour une expédition vers les Ébihens.
+*   **Anniversaires** : Un cadre inoubliable pour souffler ses bougies (possibilité de pique-nique sur les îles).
+
+#### 🛠 Supports disponibles pour les groupes :
+*   **Catamarans** (pour les sensations d'équipe)
+*   **Kayaks simples ou doubles** (pour la balade tranquille)
+*   **Stand Up Paddle** (dont le Paddle Géant si disponible !)
+*   **Mirage Eclipse** (Pédaleurs)
+
+### Formule "Zéro Contrainte"
+1.  **Choisissez** vos supports et vos horaires.
+2.  **Appelez-nous** : on vous conseille selon la marée.
+3.  **Profitez** : On prépare tout (combinaisons, gilets, matériel gréé). Vous n'avez plus qu'à vous mettre à l'eau !
+
+> **Tarifs de groupe** : Contactez-nous directement pour un devis personnalisé adapté à votre budget et au nombre de participants.
