@@ -70,10 +70,10 @@ collections:
     files:
       - name: "pricing"
         label: "Grille des Tarifs"
-        file: "src/content/settings/pricing.md"
+        file: "src/content/pricing/pricing.md"
         fields:
           - {label: "Titre Happy Hour", name: "happyHourTitle", widget: "string"}
-          - {label: "Détails Happy Hour (Markdown)", name: "happyHourText", widget: "string"}          
+          - {label: "Détails Happy Hour (Markdown)", name: "happyHourText", widget: "markdown"}          
           - {label: "Petite phrase du bas (Subtext)", name: "happyHourSubtext", widget: "string", required: false, hint: "S'affiche en petit et en transparence"}
           - label: "Lignes du tableau"
             name: "pricing_table"
