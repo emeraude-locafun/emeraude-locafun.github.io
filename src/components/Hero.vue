@@ -18,7 +18,7 @@
       <!-- Petit badge saison -->
       <div class="inline-block mb-6 animate-fade-in">
         <span class="py-1 px-3 rounded-full bg-emerald-500/20 border border-emerald-400/50 text-emerald-200 text-sm font-bold tracking-wider backdrop-blur-sm">
-          SAISON 2026
+          SAISON {{ saison }}
         </span>
       </div>
 
@@ -74,6 +74,10 @@ defineProps({
     required: true
   },
   subtitle: {
+    type: String,
+    required: true
+  },
+  saison: {
     type: String,
     required: true
   },

@@ -16,6 +16,7 @@ const sectionsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     subtitle: z.string(),
+    saison: z.string(),
     image: z.string().optional(),
   }),
 });
