@@ -5,9 +5,98 @@
         
         <!-- Logo / Titre -->
         <div class="flex-shrink-0 flex items-center">
-          <a href="/#" class="text-2xl font-extrabold text-emerald-700 tracking-tight font-heading">
+<!--          <a href="/#" class="text-2xl font-extrabold text-emerald-700 tracking-tight font-heading">
             ÉMERAUDE <span class="text-emerald-500 font-normal">LOCA-FUN</span>
-          </a>
+          </a>-->
+        <a href="/#" class="flex items-center gap-2">
+      
+<svg
+   viewBox="0 0 383.43903 43.689034"
+   fill="none"
+   aria-label="Logo Émeraude Loca-fun"
+   version="1.1"
+   id="svg5"
+   width="343.43903"
+   height="43.689034"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <!-- Définitions de dégradés pour un effet moderne -->
+  <defs
+     id="defs2">
+    <linearGradient
+       id="sailGradient"
+       x1="60.722263"
+       y1="3.4583693"
+       x2="109.13943"
+       y2="51.875538"
+       gradientTransform="scale(0.69167384,1.4457681)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         style="stop-color:#34D399;stop-opacity:1"
+         id="stop1" />
+      <!-- emerald-400 -->
+      <stop
+         offset="100%"
+         style="stop-color:#059669;stop-opacity:1"
+         id="stop2" />
+      <!-- emerald-600 -->
+    </linearGradient>
+  </defs>
+  <!-- Groupe Icône (Voile + Vague) -->
+  <g
+     transform="matrix(0.50128347,0,0,0.51084518,-3.759626,-2.5542259)"
+     id="g4">
+    <!-- La Grande Voile (Catamaran) -->
+    <path
+       d="m 45,5 c 0,0 35,35 30,70 H 42 Z"
+       fill="url(#sailGradient)"
+       id="path2"
+       style="fill:url(#sailGradient)" />
+    <!-- Le Foc (Petite voile avant) -->
+    <path
+       d="m 38,25 c 0,0 -23,30 -8,50 h 8 z"
+       fill="#064e3b"
+       opacity="0.9"
+       id="path3" />
+    <!-- emerald-900 -->
+    <!-- La Vague / Coque (Suggère le mouvement) -->
+    <path
+       d="M 10,82 Q 45,95 85,80"
+       stroke="#059669"
+       stroke-width="5"
+       stroke-linecap="round"
+       fill="none"
+       id="path4" />
+  </g>
+  <!-- Texte -->
+  <g
+     font-family="Montserrat, sans-serif"
+     transform="matrix(0.73835022,0,0,0.83745684,42.88765,33.197018)"
+     id="g5">
+    <!-- ÉMERAUDE (Vert foncé pour la lisibilité) -->
+    <text
+       x="0"
+       y="0"
+       font-size="38px"
+       font-weight="800"
+       fill="#065f46"
+       letter-spacing="-1"
+       id="text4">ÉMERAUDE</text>
+    <!-- LOCA-FUN (Vert émeraude vif pour le côté fun) -->
+    <text
+       x="225"
+       y="0"
+       font-size="38px"
+       font-weight="400"
+       fill="#10b981"
+       letter-spacing="0"
+       id="text5">LOCA-FUN</text>
+  </g>
+</svg>
+
+</a>
+
         </div>
 
         <!-- Menu Desktop -->
