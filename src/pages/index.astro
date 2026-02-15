@@ -7,12 +7,21 @@ import FleetCard from '../components/FleetCard.astro';
 import { getCollection } from 'astro:content';
 import  Contact from '../components/Contact.astro';
 import Hero from '../components/Hero.vue';
+import NewsCard from '../components/NewsCard.astro';
+
 import { getEntry } from 'astro:content';
 
 // 1. Récupérer les données du fichier hero.md
 const heroEntry = await getEntry('sections', 'hero');
 const { Content: HeroContent } = await heroEntry.render();
 import { marked } from 'marked'; // <--- Import de la librairie
+
+// Récupération des actualités
+const allNews = await getCollection('news');
+// Tri par date décroissante et récupération des 3 premières
+const latestNews = allNews
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 3);
 
 // Récupération des données Tarifs
 const pricingEntry = await getEntry('pricing', 'pricing');
@@ -42,6 +51,48 @@ const sortedFleet = fleet.sort((a, b) => a.data.type.localeCompare(b.data.type))
     <!-- On injecte le corps du texte (le body du markdown) dans le slot du composant -->
     <HeroContent />
 	</Hero>
+
+
+<!-- NOUVELLE SECTION : ACTUALITÉS -->
+  <!-- On n'affiche cette section que s'il y a des news -->
+  {latestNews.length > 0 && (
+    <section class="py-12 bg-white relative z-20 -mt-8 mb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- En-tête de section -->
+        <div class="flex justify-between items-end mb-8 border-b border-gray-100 pb-4">
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 font-heading">Dernières Actualités</h2>
+            <p class="text-gray-500 text-sm mt-1">La vie du club et de la baie</p>
+          </div>
+          <a href="/actualites" class="hidden sm:inline-flex text-emerald-600 font-bold hover:text-emerald-800 text-sm items-center transition">
+            Voir toutes les actus →
+          </a>
+        </div>
+
+        <!-- Grille des News -->
+        <div class="grid md:grid-cols-3 gap-6">
+          {latestNews.map(news => (
+            <NewsCard 
+              title={news.data.title}
+              publishDate={news.data.publishDate}
+              excerpt={news.data.excerpt}
+              image={news.data.image}
+              slug={news.slug}
+            />
+          ))}
+        </div>
+
+        <!-- Bouton mobile "Voir tout" -->
+        <div class="mt-6 text-center sm:hidden">
+           <a href="/actualites" class="text-emerald-600 font-bold text-sm">Voir toutes les actualités →</a>
+        </div>
+
+      </div>
+    </section>
+  )}
+
+
   <!-- FLOTTE SECTION -->
   <section id="fleet" class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 text-center">

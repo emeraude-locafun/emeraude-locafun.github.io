@@ -61,13 +61,24 @@ const pricingCollection = defineCollection({
   }),
 });
 
+const newsCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    publishDate: z.date(),
+    excerpt: z.string(), // Un court résumé pour la carte
+    image: z.string().optional(),
+    author: z.string().default('L’équipe Émeraude'),
+  }),
+});
 
 export const collections = {
   fleet: fleetCollection,
   sections: sectionsCollection,
     pages: pagesCollection,
     settings: settingsCollection, 
-    pricing: pricingCollection
+    pricing: pricingCollection,
+      news: newsCollection, 
 
 
 };

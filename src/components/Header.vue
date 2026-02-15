@@ -145,6 +145,7 @@ const isScrolled = ref(false);
 
 const navItems = [
   { name: 'Accueil', href: '/#' },
+  { name: 'Actualités', href: '/actualites' },
   { name: 'La Flotte', href: '/#fleet' },
   { name: 'Autres prestations', href: '/#prestations' },
   { name: 'Tarifs', href: '/#pricing' }

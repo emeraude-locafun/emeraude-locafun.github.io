@@ -86,3 +86,16 @@ collections:
               - {label: "Prix 3h (€)", name: "price_3h", widget: "number", required: false}
               - {label: "Prix 4h (€)", name: "price_4h", widget: "number", required: false}
               - {label: "Prix Journée (€)", name: "price_day", widget: "number", required: false}
+
+  - name: "news"
+    label: "Actualités"
+    folder: "src/content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date de publication", name: "publishDate", widget: "datetime"}
+      - {label: "Auteur", name: "author", widget: "string", default: "Emma & Gaëtan"}
+      - {label: "Image de couverture", name: "image", widget: "image", required: false}
+      - {label: "Résumé (pour la carte)", name: "excerpt", widget: "text"}
+      - {label: "Corps de l'article", name: "body", widget: "markdown"}

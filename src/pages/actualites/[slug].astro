@@ -1,0 +1,77 @@
+---
+import "../../styles/global.css";
+
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.vue';
+
+// Génération des routes statiques
+export async function getStaticPaths() {
+  const newsEntries = await getCollection('news');
+  return newsEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const formattedDate = new Date(entry.data.publishDate).toLocaleDateString('fr-FR', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<Layout title={`${entry.data.title} | Actualités Émeraude Loca-fun`}>
+  <Header client:load />
+
+  <main class="bg-white min-h-screen pb-20">
+    
+    <!-- Image Hero (si existe) -->
+    {entry.data.image && (
+      <div class="w-full h-[40vh] bg-gray-200">
+        <img src={entry.data.image} alt={entry.data.title} class="w-full h-full object-cover" />
+      </div>
+    )}
+
+    <article class="max-w-3xl mx-auto px-4 -mt-20 relative z-10">
+      <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100">
+        
+        <!-- Méta données -->
+        <div class="flex items-center text-sm text-gray-500 mb-6 space-x-4">
+          <span class="flex items-center text-emerald-600 font-bold">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            {formattedDate}
+          </span>
+          <span>•</span>
+          <span class="flex items-center">
+            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+            {entry.data.author}
+          </span>
+        </div>
+
+        <h1 class="text-3xl md:text-5xl font-bold text-gray-900 mb-8 font-heading leading-tight">
+          {entry.data.title}
+        </h1>
+
+        <!-- Contenu Markdown stylisé -->
+        <div class="prose prose-lg prose-emerald max-w-none">
+          <Content />
+        </div>
+
+        <!-- Navigation retour -->
+        <div class="mt-12 pt-8 border-t border-gray-100 flex justify-between items-center">
+          <a href="/actualites" class="text-gray-500 hover:text-emerald-600 font-bold flex items-center transition">
+            ← Retour aux actus
+          </a>
+          
+          <div class="text-sm text-gray-400">
+            Partagez cette news sur les réseaux
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+</Layout>
