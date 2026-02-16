@@ -60,7 +60,7 @@
 
         <!-- Description (Slot pour le texte riche ou HTML) -->
       <div class="text-lg md:text-xl text-back-100 max-w-2xl mx-auto leading-relaxed opacity-90 prose prose-emerald">
-        <div class=" mb-16 animate-fade-in">
+        <div class=" m-6 mb-10 animate-fade-in">
         <slot />
         </div>
       </div>
