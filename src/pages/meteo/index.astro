@@ -1,0 +1,24 @@
+---
+import "../../styles/global.css";
+
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.vue';
+import WeatherWidget from '../../components/WeatherWidget.vue';
+import { getCollection } from 'astro:content';
+
+---
+
+<Layout title="Météo | Émeraude Loca-fun">
+  <Header client:load />
+
+  <main class="bg-gray-50 min-h-screen">
+    
+    <!-- En-tête simple -->
+    <section id="contact" class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <WeatherWidget client:load />
+    </div>
+    </section>
+  </main>
+</Layout>
