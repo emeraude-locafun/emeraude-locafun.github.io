@@ -78,20 +78,19 @@
 
       </div>
 
-      <!-- Prévisions horaires -->
+ <!-- Prévisions horaires intelligentes -->
       <div class="mt-6 pt-4 border-t border-gray-100">
-        <p class="text-xs uppercase text-gray-400 mb-3 font-bold tracking-wider">À venir (GFS)</p>
+        <p class="text-xs uppercase text-gray-400 mb-3 font-bold tracking-wider">
+          À venir (GFS)
+        </p>
         <div class="grid grid-cols-4 gap-3 text-center">
           <div v-for="(hour, i) in forecast" :key="i" class="bg-emerald-50/50 rounded p-2 border border-emerald-50">
-            <!-- Heure agrandie : text-xs -->
             <span class="block text-xs text-gray-500 mb-1">{{ hour.time }}h</span>
-            <!-- Vent prévision agrandi : text-base -->
             <span class="block font-bold text-emerald-800 text-base">{{ hour.wind }} <span class="text-[10px] font-normal text-emerald-600 align-top">nds</span></span>
           </div>
         </div>
       </div>
     </div>
-
     <!-- Footer -->
     <a 
       href="https://www.windguru.cz/573" 
@@ -109,6 +108,7 @@ import { ref, onMounted, computed } from 'vue';
 const loading = ref(true);
 const current = ref(null);
 const forecast = ref([]);
+const forecastStep = ref(1); // Pour affichage dans le template
 
 // Coordonnées de Lancieux
 const LAT = 48.6095;
@@ -128,18 +128,55 @@ const fetchWeather = async () => {
       gusts: Math.round(data.current.wind_gusts_10m),
       code: data.current.weather_code
     };
+    const now = new Date();
 
     const currentHour = new Date().getHours();
-    const nextHours = [];
-    for(let i = 0; i < data.hourly.time.length; i++) {
-      const date = new Date(data.hourly.time[i]);
-      if (date.getHours() > currentHour && nextHours.length < 4) {
-        nextHours.push({
-          time: date.getHours(),
-          wind: Math.round(data.hourly.wind_speed_10m[i])
-        });
-      }
+   // Détermination de l'intervalle (step) selon l'heure actuelle
+    let step = 1;
+    if (currentHour < 5) {
+      step = 4; // Avant 9h : toutes les 3h
+    } else if (currentHour < 9) {
+      step = 3; // Avant 9h : toutes les 3h
+    } else if (currentHour >= 9 && currentHour < 14) {
+      step = 2; // De 9h à 13h59 : toutes les 2h
+    } else {
+      step = 1; // À partir de 14h : toutes les heures
     }
+    forecastStep.value = step;
+
+    // Récupération des données futures en respectant le pas
+    const nextHours = [];
+    
+    // 1. Trouver l'index de la prochaine heure disponible
+    let startIndex = -1;
+    const nowTime = now.getTime();
+    
+    for(let i = 0; i < data.hourly.time.length; i++) {
+        // On convertit le string ISO de l'API en date objet
+        const forecastDate = new Date(data.hourly.time[i]);
+        // On prend le premier créneau strictement futur
+        if (forecastDate.getTime() > nowTime) {
+            startIndex = i;
+            break;
+        }
+    }
+
+    // 2. Boucler pour prendre 4 valeurs avec le saut (step)
+    if (startIndex !== -1) {
+        for (let j = 0; j < 4; j++) {
+            const targetIndex = startIndex + (j * step);
+            
+            // Vérification pour ne pas sortir du tableau de données
+            if (targetIndex < data.hourly.time.length) {
+                const date = new Date(data.hourly.time[targetIndex]);
+                nextHours.push({
+                    time: date.getHours(), // Affiche juste l'heure (ex: 14)
+                    wind: Math.round(data.hourly.wind_speed_10m[targetIndex])
+                });
+            }
+        }
+    }
+    
     forecast.value = nextHours;
 
   } catch (e) {

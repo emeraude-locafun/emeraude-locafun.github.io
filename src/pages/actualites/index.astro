@@ -5,6 +5,7 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.vue';
 import NewsCard from '../../components/NewsCard.astro';
 import Contact from '../../components/Contact.astro';
+import WeatherWidget from '../../components/WeatherWidget.vue';
 import { getCollection } from 'astro:content';
 
 // Récupérer toutes les news et trier par date
@@ -48,7 +49,11 @@ const allNews = (await getCollection('news')).sort(
         </div>
       )}
     </section>
+    <section id="contact" class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <Contact />
+    <WeatherWidget client:load />
+    </div>
+    </section>
   </main>
 </Layout>
