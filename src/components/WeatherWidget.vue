@@ -87,7 +87,7 @@
 
     <!-- Footer : Lien Windguru externe -->
     <a 
-      href="https://www.windguru.cz/48507" 
+      href="https://www.windguru.cz/573" 
       target="_blank"
       class="block bg-gray-50 hover:bg-emerald-50 p-2.5 text-center text-xs text-emerald-600 font-bold transition border-t border-gray-100 group-hover:text-emerald-700"
     >
