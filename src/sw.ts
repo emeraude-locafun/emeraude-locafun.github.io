@@ -25,7 +25,7 @@ const CONFIG: ServiceConfig = {
     repo: 'emeraude-locafun.github.io',
     branch: 'main',
   },
-  checkThreshold: 50,
+  checkThreshold: 20,
   cachePrefix: 'mon-projet-cache-',
 };
 
@@ -123,7 +123,7 @@ self.addEventListener('fetch', (event: FetchEvent) => {
   const url = new URL(event.request.url);
 //    console.error(`[SW-TS] Intercepted request to: ${url.href} + ${url.hostname} `)
   // Filtrage du domaine cible
-  if (url.hostname === CONFIG.targetDomain) {
+  if (url.hostname === CONFIG.targetDomain && url.pathname !== '/sw.js' && !url.pathname.includes('/api/webcam')) {
     requestCounter++;
 
     event.respondWith(
@@ -147,7 +147,6 @@ self.addEventListener('fetch', (event: FetchEvent) => {
 
         // 3. Fallback Réseau
         try {
-            console.error(`[SW-TS] Fetching from network: ${url.href}`)
           const networkResponse = await fetch(event.request);
 
           // Vérification validité réponse avant cache
@@ -170,6 +169,9 @@ self.addEventListener('fetch', (event: FetchEvent) => {
         }
       })()
     );
+  }else {
+    // Pour les autres requêtes, on laisse faire le navigateur
+    event.respondWith(fetch(event.request));
   }
 });
 
