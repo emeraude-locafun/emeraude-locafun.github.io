@@ -63,9 +63,7 @@ let timer = null;
 const refreshImage = () => {
   loading.value = true;
   error.value = false;
-  // Astuce : On ajoute un timestamp (?t=...) pour forcer le navigateur à recharger l'image
-  // sinon il afficherait toujours la version en cache.
-  imageUrl.value = `${PROXY_URL}?t=${Date.now()}`;
+  imageUrl.value = 'https://images.weserv.nl/?url=http://193.248.203.116:1700/record/current.jpg';// `${PROXY_URL}?t=${Date.now()}`;
 };
 
 const handleError = () => {
