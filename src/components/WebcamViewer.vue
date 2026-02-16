@@ -53,7 +53,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 
 // On pointe vers notre proxy interne
-const PROXY_URL = '/api/webcam';
+const PROXY_URL = 'https://images.weserv.nl/?url=http://193.248.203.116:1700/record/current.jpg';
 
 const imageUrl = ref('');
 const loading = ref(true);
@@ -63,7 +63,7 @@ let timer = null;
 const refreshImage = () => {
   loading.value = true;
   error.value = false;
-  imageUrl.value = 'https://images.weserv.nl/?url=http://193.248.203.116:1700/record/current.jpg';// `${PROXY_URL}?t=${Date.now()}`;
+  imageUrl.value = `${PROXY_URL}?rand=${Date.now()}`;
 };
 
 const handleError = () => {
