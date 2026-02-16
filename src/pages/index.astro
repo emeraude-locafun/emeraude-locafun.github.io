@@ -8,6 +8,7 @@ import { getCollection } from 'astro:content';
 import  Contact from '../components/Contact.astro';
 import Hero from '../components/Hero.vue';
 import NewsCard from '../components/NewsCard.astro';
+import WeatherWidget from '../components/WeatherWidget.vue'; 
 
 import { getEntry } from 'astro:content';
 
@@ -54,44 +55,52 @@ const sortedFleet = fleet.sort((a, b) => a.data.type.localeCompare(b.data.type))
 
 
 <!-- NOUVELLE SECTION : ACTUALITÉS -->
-  <!-- On n'affiche cette section que s'il y a des news -->
-  {latestNews.length > 0 && (
-    <section class="py-12 bg-white relative z-20 -mt-8 mb-8">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <section class="py-12 bg-gray-50 relative z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Layout : Colonne Actus (gauche) / Colonne Météo (droite) -->
+      <div class="grid lg:grid-cols-3 gap-8 items-start">
         
-        <!-- En-tête de section -->
-        <div class="flex justify-between items-end mb-8 border-b border-gray-100 pb-4">
-          <div>
-            <h2 class="text-2xl font-bold text-gray-900 font-heading">Dernières Actualités</h2>
-            <p class="text-gray-500 text-sm mt-1">Les nouvelles de la location et de la baie</p>
-          </div>
-          <a href="/actualites" class="hidden sm:inline-flex text-emerald-600 font-bold hover:text-emerald-800 text-sm items-center transition">
-            Voir toutes les actus →
-          </a>
+        <!-- COLONNE GAUCHE : LES ACTUALITÉS (Prend 2 colonnes sur grand écran) -->
+        <div class="lg:col-span-2">
+           <div class="flex justify-between items-end mb-6">
+              <h2 class="text-2xl font-bold text-gray-900 font-heading">Dernières Actualités</h2>
+              <a href="/actualites" class="text-emerald-600 font-bold hover:text-emerald-800 text-sm">Toutes les actus →</a>
+           </div>
+
+           {latestNews.length > 0 ? (
+             <div class="grid sm:grid-cols-2 gap-6">
+                {/* On affiche seulement les 2 dernières actus pour l'équilibre visuel, ou 3 si vous préférez */}
+                {latestNews.slice(0, 2).map(news => (
+                  <NewsCard 
+                    title={news.data.title}
+                    publishDate={news.data.publishDate}
+                    excerpt={news.data.excerpt}
+                    image={news.data.image}
+                    slug={news.slug}
+                  />
+                ))}
+             </div>
+           ) : (
+             <p class="text-gray-500 italic">La saison reprend bientôt !</p>
+           )}
         </div>
 
-        <!-- Grille des News -->
-        <div class="grid md:grid-cols-3 gap-6">
-          {latestNews.map(news => (
-            <NewsCard 
-              title={news.data.title}
-              publishDate={news.data.publishDate}
-              excerpt={news.data.excerpt}
-              image={news.data.image}
-              slug={news.slug}
-            />
-          ))}
-        </div>
-
-        <!-- Bouton mobile "Voir tout" -->
-        <div class="mt-6 text-center sm:hidden">
-           <a href="/actualites" class="text-emerald-600 font-bold text-sm">Voir toutes les actualités →</a>
+        <!-- COLONNE DROITE : WIDGET MÉTÉO (Sticky pour rester visible) -->
+        <div class="lg:col-span-1 lg:sticky lg:top-24 mt-8 lg:mt-0">
+          <h3 class="text-lg font-bold text-gray-900 mb-4 font-heading pl-1">Conditions en direct</h3>
+          <!-- Le Widget Vue -->
+          <WeatherWidget client:visible />
+          
+          <p class="text-xs text-gray-400 mt-2 text-center">
+            Données GFS 13km via Open-Meteo. <br>Mise à jour toutes les heures.
+          </p>
         </div>
 
       </div>
-    </section>
-  )}
 
+    </div>
+  </section>
 
   <!-- FLOTTE SECTION -->
   <section id="fleet" class="py-20 bg-gray-50">
