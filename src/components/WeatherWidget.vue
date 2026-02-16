@@ -47,7 +47,7 @@
               </svg>
             </div>
             <!-- Texte boussole agrandi -->
-            <span class="text-xs font-bold text-gray-400">N</span>
+            <span class="text-xs font-bold text-gray-400">{{ windDirection }}</span>
           </div>
           
           <div>
@@ -109,6 +109,8 @@ const loading = ref(true);
 const current = ref(null);
 const forecast = ref([]);
 const forecastStep = ref(1); // Pour affichage dans le template
+const windDirection = ref('N'); // Pour affichage dans le template
+
 
 // Coordonnées de Lancieux
 const LAT = 48.6095;
@@ -121,6 +123,7 @@ const fetchWeather = async () => {
     const res = await fetch(API_URL);
     const data = await res.json();
 
+
     current.value = {
       temp: Math.round(data.current.temperature_2m),
       windSpeed: Math.round(data.current.wind_speed_10m),
@@ -128,10 +131,15 @@ const fetchWeather = async () => {
       gusts: Math.round(data.current.wind_gusts_10m),
       code: data.current.weather_code
     };
+
+     const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+
+    const index = Math.round(current.value.windDir / 45) % 8;
+
+    windDirection.value = directions[index];
     const now = new Date();
 
     const currentHour = new Date().getHours();
-   // Détermination de l'intervalle (step) selon l'heure actuelle
     let step = 1;
     if (currentHour < 5) {
       step = 4; // Avant 9h : toutes les 3h
