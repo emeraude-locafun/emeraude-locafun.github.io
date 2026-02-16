@@ -2,7 +2,7 @@
 title: Ouverture de la saison 2026 !
 publishDate: 2026-04-01
 author: Emma
-image: /images/uploads/whatsapp-image-2026-02-16-at-12.54.58.jpeg
+image: /images/uploads/whatsapp-image-2026-02-16-at-16.20.43.jpeg
 excerpt: Nous sommes ravis de vous retrouver sur la plage de Saint-Sieu.
   Découvrez les nouveaux Hobie Cat arrivés cet hiver.
 ---
