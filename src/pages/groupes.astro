@@ -6,7 +6,7 @@ import { getEntry } from 'astro:content';
 import ResponsiveImage from '../components/ResponsiveImage.vue';
 
 // Récupération du contenu "groupes"
-const entry = await getEntry('pages', 'groupes');
+const entry = await getEntry('pages', 'groupes')!;
 const { Content } = await entry.render();
 ---
 

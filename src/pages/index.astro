@@ -1,8 +1,8 @@
 ---
 import "../styles/global.css";
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.vue';
 import Pricing from '../components/Pricing.vue';
+import Header from '../components/Header.vue';
 import FleetCard from '../components/FleetCard.astro';
 import { getCollection } from 'astro:content';
 import  Contact from '../components/Contact.astro';
@@ -12,7 +12,7 @@ import NewsCard from '../components/NewsCard.astro';
 import { getEntry } from 'astro:content';
 
 // 1. Récupérer les données du fichier hero.md
-const heroEntry = await getEntry('sections', 'hero');
+const heroEntry = await getEntry('sections', 'hero')!;
 const { Content: HeroContent } = await heroEntry.render();
 import { marked } from 'marked'; // <--- Import de la librairie
 
@@ -24,7 +24,7 @@ const latestNews = allNews
   .slice(0, 3);
 
 // Récupération des données Tarifs
-const pricingEntry = await getEntry('pricing', 'pricing');
+const pricingEntry = await getEntry('pricing', 'pricing')!;
 const pricingData = pricingEntry.data;
 const happyHourHtml = pricingData.happyHourText 
   ? marked.parse(pricingData.happyHourText) 
@@ -46,7 +46,7 @@ const sortedFleet = fleet.sort((a, b) => a.data.type.localeCompare(b.data.type))
     title={heroEntry.data.title}
     subtitle={heroEntry.data.subtitle}
     saison={heroEntry.data.saison}
-    image={heroEntry.data.image}
+    image={heroEntry.data.image!}
   >
     <!-- On injecte le corps du texte (le body du markdown) dans le slot du composant -->
     <HeroContent />

@@ -1,3 +1,21 @@
+<script setup lang="ts">
+defineProps({
+  items: {
+    type: Array,
+    required: true,
+    default: () => []
+  },
+  happyHourTitle: String,
+  happyHourHtml: String,
+  happyHourSubtext: String
+});
+
+const formatPrice = (price: number | null | undefined) => {
+  if (price === null || price === undefined) return '-';
+  return `${price}€`;
+};
+</script>
+
 <template>
   <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
     <div class="p-6 bg-emerald-600 text-white text-center">
@@ -51,21 +69,5 @@
   </div>
 </template>
 
-<script setup>
-// Définition des props pour recevoir les données depuis Astro
-defineProps({
-  items: {
-    type: Array,
-    required: true,
-    default: () => []
-  },
-  happyHourTitle: String,
-  happyHourHtml: String,
-  happyHourSubtext: String
-});
 
-const formatPrice = (price) => {
-  if (price === null || price === undefined) return '-';
-  return `${price}€`;
-};
-</script>
+<style scoped></style>

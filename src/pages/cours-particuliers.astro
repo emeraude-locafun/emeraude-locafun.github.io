@@ -6,7 +6,7 @@ import { getEntry } from 'astro:content';
 import ResponsiveImage from '../components/ResponsiveImage.vue';
 
 // Récupération du contenu "cours-particuliers"
-const entry = await getEntry('pages', 'cours-particuliers');
+const entry = await getEntry('pages', 'cours-particuliers')!;
 const { Content } = await entry.render();
 ---
 
