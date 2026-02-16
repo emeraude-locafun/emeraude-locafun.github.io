@@ -202,19 +202,19 @@ const weatherIcon = computed(() => {
     label: 'Grand Soleil',
     svg: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="animate-spin-slow"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>`
   };
-  if (code <= 2) return {
+  else if (code <= 2) return {
     label: 'Peu Nuageux',
     svg: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" class="opacity-50"></path></svg>`
   };
-  if (code === 3 || code === 45 || code === 48) return {
+  else if (code === 3 || code === 45 || code === 48) return {
     label: 'Nuageux',
     svg: `<svg class="text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>`
   };
-  if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82)) return {
+  else if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82)) return {
     label: 'Pluvieux',
     svg: `<svg class="text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 16.2A4.5 4.5 0 0017.5 8h-1.8c-.7-3.2-3.4-5.6-6.7-5.6-3.8 0-6.9 3.1-6.9 6.9 0 .3 0 .7.1 1C2.2 11.1 0 13.3 0 16c0 2.8 2.2 5 5 5h12.5c2.5 0 4.5-2 4.5-4.5V16c0-.1 0-.1 0-.1zM14 13l-2 3 2 3M10 13l-2 3 2 3"></path></svg>`
   };
-  if (code >= 95) return {
+  else if (code >= 95) return {
     label: 'Orageux',
     svg: `<svg class="text-purple-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>`
   };
