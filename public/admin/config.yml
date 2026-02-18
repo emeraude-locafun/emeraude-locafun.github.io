@@ -4,6 +4,10 @@ backend:
   branch: main
   base_url: https://decap-proxy-emeraude.olivier-barais.workers.dev
   auth_endpoint: /auth
+  slug: 
+      encoding: "ascii"
+      clean_accents: true
+      sanitize_replacement: "_"
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
