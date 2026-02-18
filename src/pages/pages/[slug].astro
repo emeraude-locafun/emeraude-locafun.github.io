@@ -1,0 +1,66 @@
+---
+import "../../styles/global.css";
+
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.vue';
+import Contact from '../../components/Contact.astro';
+
+// 1. Génère les chemins pour TOUTES les pages de la collection "pages"
+export async function getStaticPaths() {
+  const pages = await getCollection('pages');
+  return pages.map(page => ({
+    params: { slug: page.slug },
+    props: { page },
+  }));
+}
+
+// 2. Récupère les données de la page demandée
+const { page } = Astro.props;
+const { Content } = await page.render();
+---
+
+<Layout title={`${page.data.title} | Émeraude Loca-fun`}>
+  <Header client:load />
+
+  <main class="bg-gray-50 min-h-screen">
+    <!-- En-tête de page -->
+    <div class="relative h-[40vh] min-h-[300px] flex items-center justify-center bg-emerald-900 overflow-hidden">
+      {page.data.image && (
+        <img 
+          src={page.data.image} 
+          alt={page.data.title} 
+          class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay" 
+          transition:name={`hero-${page.slug}`}
+        />
+      )}
+      <div class="relative z-10 text-center px-4">
+        <!-- Badge optionnel si c'est une page "Groupe" par exemple, on pourrait le gérer via un tag -->
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4 font-heading drop-shadow-lg">
+          {page.data.title}
+        </h1>
+        <p class="text-xl text-white/90 font-medium max-w-2xl mx-auto drop-shadow-md">
+          {page.data.subtitle}
+        </p>
+      </div>
+    </div>
+
+    <!-- Contenu -->
+    <section class="max-w-4xl mx-auto px-4 py-16 -mt-10 relative z-20">
+      <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl border-t-4 border-emerald-500">
+         <div class="prose prose-lg prose-emerald max-w-none">
+            <Content />
+         </div>
+      </div>
+
+      <!-- Bloc Action Rapide en bas de contenu -->
+      <div class="mt-12 text-center">
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Intéressé ?</h3>
+        <a href="/#contact" class="inline-flex items-center justify-center px-8 py-3 bg-emerald-600 text-white font-bold rounded-full hover:bg-emerald-700 transition shadow-lg transform hover:scale-105">
+          Nous contacter pour réserver
+        </a>
+      </div>
+    </section>
+
+  </main>
+</Layout>

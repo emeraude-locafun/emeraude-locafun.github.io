@@ -26,7 +26,10 @@ const pagesCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     subtitle: z.string().optional(),
+    iconfirstpage: z.string().optional(),
     image: z.string().optional(),
+     showOnHomepage: z.boolean().default(false),
+    order: z.number().default(99), 
   }),
 });
 

@@ -51,7 +51,10 @@ collections:
     fields:
       - {label: "Titre", name: "title", widget: "string"}
       - {label: "Sous-titre / Accroche", name: "subtitle", widget: "string"}
+      - {label: "Afficher sur la page d'accueil ?", name: "showOnHomepage", widget: "boolean", default: true}
+      - {label: "Ordre d'affichage", name: "order", widget: "number", default: 10}
       - {label: "Image d'en-tête", name: "image", widget: "image"}
+      - {label: "Icône sur la page d'accueil", name: "iconfirstpage", widget: "string"}
       - {label: "Contenu", name: "body", widget: "markdown"}
 # ... collections fleet, sections, pages existantes ...
 
