@@ -47,7 +47,7 @@ collections:
     create: true
     extension: "mdx"       # <--- Important : on force l'extension MDX
     format: "frontmatter"  # <--- Important pour que Decap gère bien le YAML + contenu
-    slug: "{{slug}}"
+    slug: "{{fields.slug}}"
     fields:
       - {label: "Slug de la page", name: "slug", widget: "string", hint: "Ex: 'groupes-evjf' pour une page accessible via /pages/groupes-evjf"}
       - {label: "Titre", name: "title", widget: "string"}
