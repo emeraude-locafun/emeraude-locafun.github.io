@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.vue';
 import Contact from '../components/Contact.astro';
@@ -31,17 +30,6 @@ import WeatherWidget from '../components/WeatherWidget.vue';
         <div class="lg:col-span-2">
           <WebcamViewer client:visible />
           
-          <div class="mt-8 bg-white p-6 rounded-xl border border-gray-100 shadow-sm prose prose-emerald">
-            <h3>À propos de ce spot</h3>
-            <p>
-              Cette vue donne sur <strong>l'Islet</strong>, un point stratégique de la baie de Lancieux. 
-              C'est un excellent indicateur pour la marée et l'état du plan d'eau.
-            </p>
-            <ul>
-              <li><strong>Marée haute :</strong> L'Islet est entouré d'eau, idéal pour le Kayak et le Paddle.</li>
-              <li><strong>Marée basse :</strong> La plage s'étend à perte de vue, parfait pour le char à voile (en hiver) ou la pêche à pied.</li>
-            </ul>
-          </div>
         </div>
 
         <!-- Colonne Droite : Météo (1/3) -->
