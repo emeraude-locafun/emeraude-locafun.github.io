@@ -49,6 +49,7 @@ collections:
     format: "frontmatter"  # <--- Important pour que Decap gère bien le YAML + contenu
     slug: "{{slug}}"
     fields:
+      - {label: "Slug de la page", name: "slug", widget: "string", hint: "Ex: 'groupes-evjf' pour une page accessible via /pages/groupes-evjf"}
       - {label: "Titre", name: "title", widget: "string"}
       - {label: "Sous-titre / Accroche", name: "subtitle", widget: "string"}
       - {label: "Afficher sur la page d'accueil ?", name: "showOnHomepage", widget: "boolean", default: true}
