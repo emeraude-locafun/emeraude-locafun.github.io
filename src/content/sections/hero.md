@@ -1,8 +1,8 @@
 ---
-title: "Location engins nautiques Lancieux"
-subtitle: "🌊 La baie de Lancieux, notre terrain de jeu préféré !"
-image: "/images/hero-bg.jpg"
+title: Location engins nautiques Lancieux
+subtitle: 🌊 La baie de Lancieux, notre terrain de jeu préféré !
 saison: "2026"
+image: /images/uploads/68.jpg
 ---
 
 Bienvenue dans la baie (presque trop) parfaite de Lancieux ! C’est ici que **Émeraude Loca-fun** jette l’ancre pour faire vibrer les amateurs de glisse et de sensations nautiques.
