@@ -22,7 +22,7 @@ const CONFIG: ServiceConfig = {
   targetDomain: 'emeraude-locafun.fr',
   github: {
     user: 'emeraude-locafun',
-    repo: 'emeraude-locafun.fr',
+    repo: 'emeraude-locafun.github.io',
     branch: 'main',
   },
   checkThreshold: 20,
