@@ -12,7 +12,7 @@ Après un hiver à bichonner la flotte, **Émeraude Loca-fun** rouvre ses portes
 
 ### Quoi de neuf cette année ?
 
-Nous avons reçu 1 **Hobie Cat 15** et un **Hobie Cat 16**, parfaits pour les sorties en famille.
+Nous avons reçu 1 **Hobie Cat 15** et deux **Hobie Cat 16**, parfaits pour les sorties en famille.
 
 N'hésitez pas à passer nous voir à la cabane pour réserver vos créneaux ou simplement dire bonjour. La météo s'annonce clémente pour ce premier week-end d'avril.
 
