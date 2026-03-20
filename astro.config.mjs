@@ -11,7 +11,7 @@ import serviceWorker from "@ayco/astro-sw";
  
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://emeraude-locafun.github.io',
+    site: 'https://www.emeraude-locafun.fr',
 
   integrations: [
       serviceWorker({

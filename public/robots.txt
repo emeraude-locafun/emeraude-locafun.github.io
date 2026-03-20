@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://emeraude-locafun.github.io/sitemap-index.xml
+Sitemap: https://emeraude-locafun.fr/sitemap-index.xml

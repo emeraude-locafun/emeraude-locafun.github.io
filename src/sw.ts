@@ -19,10 +19,10 @@ interface ServiceConfig {
 }
 
 const CONFIG: ServiceConfig = {
-  targetDomain: 'emeraude-locafun.github.io',
+  targetDomain: 'emeraude-locafun.fr',
   github: {
     user: 'emeraude-locafun',
-    repo: 'emeraude-locafun.github.io',
+    repo: 'emeraude-locafun.fr',
     branch: 'main',
   },
   checkThreshold: 20,
