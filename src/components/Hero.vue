@@ -36,7 +36,7 @@
       <!-- Boutons d'action -->
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <a href="#fleet" class="group px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-full transition-all transform hover:scale-105 shadow-lg shadow-emerald-900/30 flex items-center">
-          Découvrir le matos
+          Découvrir le matériel
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
