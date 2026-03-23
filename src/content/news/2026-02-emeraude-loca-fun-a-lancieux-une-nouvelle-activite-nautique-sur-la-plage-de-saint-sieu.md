@@ -56,4 +56,4 @@ Paddle à partir de ~17 €
 
 🧭 Un lieu à découvrir
 
-La plage de Saint-Sieu est un endroit charmant idéalement situé pour les activités nautiques. À proximité, d’autres structures comme le Club Nautique de Lancieux proposent également de la location et des cours, mais Émeraude Loca-fun se distingue par sa flotte moderne, l’accent mis sur le plaisir et l’accessibilité, ainsi que par son ambiance conviviale et locale.
+La plage de Saint-Sieu est un endroit charmant idéalement situé pour les activités nautiques.  Émeraude Loca-fun se distingue par sa flotte moderne, l’accent mis sur le plaisir et l’accessibilité, ainsi que par son ambiance conviviale et locale.
