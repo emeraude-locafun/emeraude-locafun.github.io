@@ -59,12 +59,34 @@
   </section>
 
         <!-- Description (Slot pour le texte riche ou HTML) -->
-      <div class="text-lg md:text-xl text-back-100 max-w-2xl mx-auto leading-relaxed opacity-90 prose prose-emerald">
+
+              <section class="py-1 bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-1 items-center">
+          
+          <!-- Colonne Gauche : Le Logo en grand -->
+          <div class="relative flex justify-center items-center p-1">
+            <!-- Petit effet de fond (tache de couleur douce) pour faire ressortir l'image -->
+            <div class="absolute inset-0 bg-emerald-50 rounded-full blur-3xl opacity-50 transform scale-90"></div>
+            <img 
+              src="/images/logo-emeraude.svg" 
+              alt="Illustration Émeraude Loca-Fun" 
+              class="relative z-10 w-full max-w-md h-auto drop-shadow-xl hover:drop-shadow-2xl transition-all duration-500"
+            />
+          </div>
+
+          <!-- Colonne Droite : Le Texte d'accueil -->
+
+                <div class="text-lg md:text-xl text-back-100 max-w-2xl mx-auto leading-relaxed opacity-90 prose prose-emerald">
         <div class=" m-6 mb-10 animate-fade-in">
-        <slot />
+          <div class="text-left">
+          <slot />
+            </div>
+            </div>
         </div>
       </div>
-
+      </div>
+      </section>
 </template>
 
 <script setup>

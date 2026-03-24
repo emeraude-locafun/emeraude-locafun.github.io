@@ -56,9 +56,9 @@ const pricingCollection = defineCollection({
         name: z.string(),
         price_1h: z.number().nullable().optional(),
         price_2h: z.number().nullable().optional(),
-        price_3h: z.number().nullable().optional(),
         price_4h: z.number().nullable().optional(),
         price_day: z.number().nullable().optional(),
+        price_10h: z.number().nullable().optional(),
       })
     ).optional(),
   }),

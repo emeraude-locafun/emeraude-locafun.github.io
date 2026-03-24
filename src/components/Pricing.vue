@@ -30,9 +30,9 @@ const formatPrice = (price: number | null | undefined) => {
             <th class="p-4 font-semibold">Support</th>
             <th class="p-4 font-semibold text-center">1h</th>
             <th class="p-4 font-semibold text-center">2h</th>
-            <th class="p-4 font-semibold text-center">3h</th>
             <th class="p-4 font-semibold text-center">4h</th>
             <th class="p-4 font-semibold text-center">Journée</th>
+            <th class="p-4 font-semibold text-center">Pack 10h</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-gray-100">
@@ -40,9 +40,10 @@ const formatPrice = (price: number | null | undefined) => {
             <td class="p-4 font-bold text-gray-800">{{ row.name }}</td>
             <td class="p-4 text-center text-gray-600">{{ formatPrice(row.price_1h) }}</td>
             <td class="p-4 text-center text-gray-600">{{ formatPrice(row.price_2h) }}</td>
-            <td class="p-4 text-center text-gray-600">{{ formatPrice(row.price_3h) }}</td>
             <td class="p-4 text-center text-gray-600">{{ formatPrice(row.price_4h) }}</td>
-            <td class="p-4 text-center font-bold text-emerald-700">{{ formatPrice(row.price_day) }}</td>
+            <td class="p-4 text-center text-gray-600">{{ formatPrice(row.price_day) }}</td>
+            <td class="p-4 text-center font-bold text-emerald-700">{{ formatPrice(row.price_10h) }}</td>
+
           </tr>
         </tbody>
       </table>

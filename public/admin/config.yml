@@ -91,9 +91,9 @@ collections:
               - {label: "Nom du Support", name: "name", widget: "string"}
               - {label: "Prix 1h (€)", name: "price_1h", widget: "number", required: false}
               - {label: "Prix 2h (€)", name: "price_2h", widget: "number", required: false}
-              - {label: "Prix 3h (€)", name: "price_3h", widget: "number", required: false}
               - {label: "Prix 4h (€)", name: "price_4h", widget: "number", required: false}
               - {label: "Prix Journée (€)", name: "price_day", widget: "number", required: false}
+              - {label: "Prix pack 10h (€)", name: "price_10h", widget: "number", required: false}
 
   - name: "news"
     label: "Actualités"
