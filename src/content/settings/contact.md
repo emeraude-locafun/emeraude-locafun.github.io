@@ -1,7 +1,7 @@
 ---
-phoneDisplay: "06 00 00 00 00"
-phoneNumber: "+33600000000"
+phoneDisplay: "en cour de validation "
+phoneNumber: "en cour de validation "
 enableWhatsapp: true
 whatsappNumber: "33600000000"
-whatsappMessage: "Bonjour, je souhaiterais réserver un support..."
+whatsappMessage: Bonjour, je souhaiterais réserver un support...
 ---
