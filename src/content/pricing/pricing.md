@@ -24,7 +24,7 @@ pricing_table:
     price_10h: 360
   - name: Hobie Cat 14
     price_1h: 50
-    price_2h: 60
+    price_2h: 90
     price_4h: 165
     price_day: 250
     price_10h: 360
