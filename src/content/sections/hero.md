@@ -1,5 +1,5 @@
 ---
-title: Location engins nautiques Lancieux Catamaran, Dériveur, Kayak, Paddel
+title: Location  Catamaran, Dériveur, Kayak & Paddel Lancieux
 subtitle: 🌊 La baie de Lancieux, notre terrain de jeu préféré !
 saison: "2026"
 image: /images/uploads/68.jpg
