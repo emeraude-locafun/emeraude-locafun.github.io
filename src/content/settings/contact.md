@@ -1,7 +1,7 @@
 ---
-phoneDisplay: "en cours de validation "
-phoneNumber: "en cours de validation "
+phoneDisplay: "0609351440"
+phoneNumber: "0609351440"
 enableWhatsapp: true
-whatsappNumber: "33600000000"
+whatsappNumber: "0609351440"
 whatsappMessage: Bonjour, je souhaiterais réserver un support...
 ---
